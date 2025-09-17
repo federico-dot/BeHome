@@ -1,0 +1,55 @@
+<odoo>
+    <record id="gestione_modello_action" model="ir.actions.act_window">
+        <field name="name">Gestione Modello</field>
+        <field name="res_model">modello</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="gestione_modello_root" name="modello_id" action="gestione_computer.gestione_modello_action" parent="gestione_computer_submenu" sequence="11">
+    </menuitem>
+
+    <record id="gestione_computer_modello_view_list" model="ir.ui.view">
+        <field name="name">gestione_computer.modello.list</field>
+        <field name="model">modello</field>
+        <field name="arch" type="xml">
+            <list string="Lista">
+                <field name="name"></field>
+                <field name="descrizione"></field>
+                <field name="marca_id"></field>
+            </list>
+        </field>
+    </record>
+
+    <record id="gestione_computer_modello_view_form" model="ir.ui.view">
+        <field name="name">gestione_computer.modello.form</field>
+        <field name="model">modello</field>
+        <field name="arch" type="xml">
+            <form string="Form Modello">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="descrizione"></field>
+                        <field name="marca_id"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="gestione_computer_modello_view_search" model="ir.ui.view">
+        <field name="name">gestione_computer.modello.search</field>
+        <field name="model">modello</field>
+        <field name="arch" type="xml">
+            <search string="searchModello">
+                <field name="name"></field>
+                <field name="descrizione"></field>
+                <field name="marca_id"></field>
+
+                <filter string="per nome" name="filter_name_empty" domain="[('name','!=',False)]"></filter>
+                <filter string="descrizione" name="filter_descrizione_empty" domain="[('descrizione','!=',False)]"></filter>
+                <filter string="per marca" name="filter_marca_empty" domain="[('marca','!=',False)]"></filter>
+            </search>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,51 @@
+<odoo>
+    <record id="gestione_software_action" model="ir.actions.act_window">
+        <field name="name">Gestione Software</field>
+        <field name="res_model">software</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="gestione_software_root" name="software" action="gestione_computer.gestione_software_action" parent="gestione_computer_submenu" sequence="12">
+    </menuitem>
+
+    <record id="gestione_computer_software_view_list" model="ir.ui.view">
+        <field name="name">gestione_computer.software.list</field>
+        <field name="model">software</field>
+        <field name="arch" type="xml">
+            <list string="Lista">
+                <field name="name"></field>
+                <field name="descrizione"></field>
+            </list>
+        </field>
+    </record>
+
+    <record id="gestione_computer_software_view_form" model="ir.ui.view">
+        <field name="name">gestione_computer.software.form</field>
+        <field name="model">software</field>
+        <field name="arch" type="xml">
+            <form string="Form Software">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="descrizione"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="gestione_computer_software_view_search" model="ir.ui.view">
+        <field name="name">gestione_computer.software.search</field>
+        <field name="model">software</field>
+        <field name="arch" type="xml">
+            <search string="searchsoftware">
+                <field name="name"></field>
+                <field name="descrizione"></field>
+
+                <filter string="per nome" name="filter_name_empty" domain="[('name','!=',False)]"></filter>
+                <filter string="descrizione" name="filter_descrizione_empty" domain="[('descrizione','!=',False)]"></filter>
+            </search>
+        </field>
+    </record>
+
+</odoo>

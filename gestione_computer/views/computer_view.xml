@@ -1,0 +1,96 @@
+<odoo>
+    <record id="gestione_computer_action" model="ir.actions.act_window">
+        <field name="name">Gestione computer</field>
+        <field name="res_model">prova_computer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="gestione_computer_root" name="computer" action="gestione_computer.gestione_computer_action">
+    </menuitem>    
+    <menuitem id="gestione_computer_submenu" name="computer" parent="gestione_computer_root" sequence="1">
+    </menuitem> 
+    <menuitem id="gestione_computer_submenu2" name="elenco_computer" action="gestione_computer.gestione_computer_action" parent="gestione_computer_submenu" sequence="5">
+     </menuitem> 
+
+    <record id="gestione_computer_prova_computer_view_list" model="ir.ui.view">
+        <field name="name">gestione_computer.prova_computer.list</field>
+        <field name="model">prova_computer</field>
+        <field name="arch" type="xml">
+            <list string="Lista">
+                <field name="name" />
+                <field name="marca_id"></field>
+                <field name="modello_id"></field> <!-- domain="[('marca.id', '=', parent.marca)]" -->
+                <field name="capacita1"></field>
+                <field name="capacita2"></field>
+                <field name="processore"></field>
+                <field name="data_acquisto"></field>
+                <field name="garanzia"></field>
+                <field name="utente_id"></field>
+                <field name="sistema_operativo"></field>
+                <field name="software_ids"></field>
+                <field name="responsabile"></field>
+            </list>
+        </field>
+    </record>
+
+    <record id="gestione_computer_prova_computer_view_form" model="ir.ui.view">
+        <field name="name">gestione_computer.prova_computer.form</field>
+        <field name="model">prova_computer</field>
+        <field name="arch" type="xml">
+            <form string="Form computer">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"></field>
+                            <field name="modello_id"></field>
+                            <field name="marca_id"></field>
+                            <field name="capacita1"></field>
+                            <field name="capacita2"></field>
+                            <field name="processore"></field>
+                        </group>
+                        <group>
+                            <field name="data_acquisto"></field>
+                            <field name="garanzia"></field>
+                            <field name="sistema_operativo"></field>
+                            <field name="software_ids" widget="many2many_tags"></field>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="utente">
+                            <field name="utente_id"></field>
+                        </page>
+                        <page string="responsabile">
+                            <field name="responsabile"></field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="gestione_computer_prova_computer_view_search" model="ir.ui.view">
+        <field name="name">gestione_computer.prova_computer.search</field>
+        <field name="model">prova_computer</field>
+        <field name="arch" type="xml">
+            <search string="search">
+                <field name="name"></field>
+                <field name="marca_id"></field>
+                <field name="modello_id"></field>
+                <field name="capacita1"></field>
+                <field name="capacita2"></field>
+                <field name="processore"></field>
+                <field name="data_acquisto"></field>
+                <field name="garanzia"></field>
+                <field name="utente_id"></field>
+                <field name="sistema_operativo"></field>
+                <field name="software_ids"></field>
+                <field name="responsabile"></field>
+
+                <filter string="per nome" name="filter_name_empty" domain="[('name','!=',False)]"></filter>
+                <filter string="data di acquisto" name="filter_data_acquisto_empty" date="data_acquisto" default_period="year,month"></filter>
+                <filter string="per capacita1" name="filter_capacita1_empty" domain="[('capacita1','!=',False)]"></filter>
+                <filter string="per capacita2" name="filter_capacita2_empty" domain="[('capacita2','!=',False)]"></filter>
+                <filter string="processore" name="filter_processore_empty" domain="[('processore','!=',False)]"></filter>
+            </search>
+        </field>
+    </record>
+</odoo>

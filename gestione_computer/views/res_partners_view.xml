@@ -1,0 +1,26 @@
+<odoo>
+    <record id="res_partner_view_form_gestione_computer" model="ir.ui.view">
+        <field name="name">res.partner.view.gestione.computer</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position="after">  <!-- inside o before -->
+                <page name="devices" string="Dispositivi">
+                    <field name="computer_ids"/>
+                </page>
+            </xpath>
+
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="numero_dispositivi"/>
+            </xpath>  
+            <xpath expr="//div[@name= 'button_box']" position="inside" > <!--per inserire smart button-->
+            <button name="action_view_computer" type="object" class="oe_stat_button" icon="fa-desktop" > <!--dettagli bottone-->
+                <div class="o_stat_info o_form_field"> <!--per distinguere la scritta dal numerino atttaccato -->
+                    <span class="o_stat_text">Dispositivi </span>   
+                    <field name="numero_dispositivi" class="o_stat_value" />
+                </div>
+            </button>
+            </xpath>          
+        </field>
+    </record>
+</odoo>

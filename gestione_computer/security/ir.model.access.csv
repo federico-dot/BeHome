@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prova_computer,access_prova_computer,gestione_computer.model_prova_computer,base.group_user,1,1,1,1
+access_marca,access_marca,gestione_computer.model_marca,base.group_user,1,1,1,1
+access_modello,access_modello,gestione_computer.model_modello,base.group_user,1,1,1,1
+access_software,access_software,gestione_computer.model_software,base.group_user,1,1,1,1
+
+
+
+    
