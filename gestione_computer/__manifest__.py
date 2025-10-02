@@ -1,7 +1,7 @@
 {
     'name': 'gestione computer',
     'version': '1.0',
-    'author': 'Mario',
+    'author': 'Federico',
     'depends': ['base'],
     'installable': True,
     'application': False,

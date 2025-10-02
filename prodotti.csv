@@ -1,0 +1,13 @@
+name,list_price,standard_price,uom_id,uom_po_id,default_code,categ_id,attribute_name,attribute_value
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Rosso
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Blue
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Bianco
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Viola
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Verde
+Felpa,19.99,10.00,1,1,TS001,1,Colore,Marrone
+Felpa,19.99,10.00,1,1,TS001,1,Dimensione,L
+Felpa,19.99,10.00,1,1,TS001,1,Dimensione,M
+Pantalone,29.99,15.00,1,1,PN001,2,Taglia,M
+Pantalone,29.99,15.00,1,1,PN001,2,Taglia,S
+
+

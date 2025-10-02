@@ -1,0 +1,75 @@
+<odoo>
+    <record id="gestione_auto_action" model="ir.actions.act_window">
+        <field name="name">Gestione Automobile</field>
+        <field name="res_model">gestione_auto.automobile</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="gestione_auto_root" name="Automobile" action="gestione_auto_action"/>
+    <menuitem id="gestione_auto_submenu" name="Automobili" parent="gestione_auto_root" sequence="1"></menuitem>
+    <menuitem id="gestione_auto_submenu2" name="Elenco Auto" action="gestione_auto.gestione_auto_action" parent="gestione_auto_submenu" sequence="5"></menuitem>
+
+
+    <record id="gestione_auto_automobile_view_list" model="ir.ui.view">
+        <field name="name">gestione_auto.automobile.list</field>
+        <field name="model">gestione_auto.automobile</field>
+        <field name="arch" type="xml">
+            <list string="Lista Auto">
+                <field name="marca"></field>
+                <field name="modello"></field>
+                <field name="targa"></field>
+                <field name="anno_immatricolazione"></field>
+                <field name="colore"></field>
+                <field name="prezzo"></field>
+                <field name="descrizione"></field>
+            </list>
+        </field>
+    </record>
+    <record id="gestione_auto_automobile_view_form" model="ir.ui.view">
+        <field name="name">gestione_auto.automobile.form</field>
+        <field name="model">gestione_auto.automobile</field>
+        <field name="arch" type="xml">
+            <form string="Form Auto">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="marca"></field>
+                            <field name="modello"></field>
+                        </group>
+                        <group>
+                            <field name="targa"></field>
+                            <field name="data_immatricolazione"></field>
+                            <field name="colore" widget="colorpicker" option="{'color_field':'colore'}"/>
+                            <field name="prezzo"></field>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descrizione">
+                            <field name="descrizione" ></field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="gestione_auto_automobile_view_search" model="ir.ui.view">
+        <field name="name">gestione_auto.automobile.search</field>
+        <field name="model">gestione_auto.automobile</field>
+        <field name="arch" type="xml">
+            <search string="Search Auto">
+                <field name="marca"></field>
+                <field name="modello"></field>
+                <field name="targa"></field>
+                <field name="anno_immatricolazione"></field>
+                <field name="colore"></field>
+                <field name="prezzo"></field>
+
+                <!-- FILTRI -->
+                <filter string="Per Marca" name="filter_marca_empty" domain="[('marca','!=',False)]"></filter>
+                <filter string="Per Modello" name="filter_modello_empty" domain="[('modello','!=',False)]"></filter>
+                <filter string="Per Anno Immatricolazione" name="filter_anno_immatricolazione_empty" domain="[('anno_immatricolazione','!=',False)]"></filter>
+            </search>
+        </field>
+    </record>
+</odoo>
