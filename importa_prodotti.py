@@ -4,9 +4,9 @@ import csv
 # 🔹 Dati di connessione
 HOST = "localhost"
 PORT = 8069
-DB = "odoo"
-USER = "f.cresci.behomecasa@gmail.com"
-PASS = "fede2004"
+DB = "your db"
+USER = "Email valida"
+PASS = "********"
 
 # 🔹 Connessione Odoo
 root = f'http://{HOST}:{PORT}/xmlrpc/'
